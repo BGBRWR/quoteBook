@@ -1,3 +1,30 @@
-div {
-    padding: 25px;
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.text {
+    font-weight: bold;
+}
+
+.quoteList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.author {
+    font-style: italic;
+}
+
+.input {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.filter {
+    margin-right: 5%;
 }

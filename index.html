@@ -8,17 +8,19 @@
 </head>
 
 <body ng-controller='mainCtrl'>
-    <p ng-repeat="quote in quotes | filter: filterText track by $index">
+    <div class="input">
+        Filter: <input type='text' ng-model='filterText' class="filter" />
+        <input type="text" placeholder='Add new quote' ng-model='newQuoteText' />
+        <input type='text' placeholder="Add quote author" ng-model='newQuoteAuthor' / />
+        <button ng-click='addQuote()'>Add Quote</button>
+    </div>
+
+    <p ng-repeat="quote in quotes | filter: filterText track by $index" class='quoteList'>
         <span class="text">{{quote.text}}</span>
         <span class='author'>{{quote.author}}</span>
-        <button ng-click='deleteMe(quote.text)'>Delete</button>
+        <button class='delete' ng-click='deleteMe(quote.text)'>Delete</button>
     </p>
-    <div>
-        Filter: <input type='text' ng-model='filterText' />
-    </div>
-    <input type="text" placeholder='Add new quote' ng-model='newQuoteText' />
-    <input type='text' placeholder="Add quote author" ng-model='newQuoteAuthor' / />
-    <button ng-click='addQuote()'>Add Quote</button>
+
 
     <script src=" https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js "></script>
     <script type="text/javascript " src='js/app.js'></script>
